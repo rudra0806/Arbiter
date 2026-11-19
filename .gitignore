@@ -13,3 +13,5 @@ test.docx
 *.docx
 arbiter-answer.*
 gateway/*.pkl
+.env.example
+.env.example
