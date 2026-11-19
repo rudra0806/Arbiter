@@ -1,0 +1,15 @@
+.env
+results/
+.cache/
+.cache_old/
+.cache_pre_fix/
+gui/node_modules/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+test.docx
+*.docx
+arbiter-answer.*
+gateway/*.pkl

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arbiter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f5f4;
+    --surface: #ffffff;
+    --text: #15171b;
+    --text-muted: #666a66;
+    --border: #d7dad6;
+    --accent: #1f6b63;
+    --accent-text: #ffffff;
+    --local-bg: #e2f1dd; --local-text: #2f6b2a;
+    --api-bg: #f7e9d2;   --api-text: #8a5a16;
+    --calc-bg: #e8e2f5;  --calc-text: #5a3fa0;
+    --danger-bg: #f7e2e0; --danger-text: #9a3b30;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171b; --surface: #1d2025;
+      --text: #eceeec; --text-muted: #9a9e9a; --border: #30343a;
+      --accent: #3fa89b; --accent-text: #0b0d0c;
+      --local-bg: #1e3321; --local-text: #7fd17a;
+      --api-bg: #3a2c15;   --api-text: #e2ab59;
+      --calc-bg: #2a2340;  --calc-text: #b79af0;
+      --danger-bg: #3a211f; --danger-text: #e18a7e;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; min-height: 100%; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+    display: flex; justify-content: center;
+    padding: calc(env(safe-area-inset-top, 0px) + 24px) 20px calc(env(safe-area-inset-bottom, 0px) + 24px);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; }
+  /* margin: auto centers this vertically when content is short, and falls
+     back to normal top-down scrolling (nothing clipped) once content grows
+     taller than the screen — align-items:center on the parent would clip
+     the overflow instead, which was the original bug. */
+  .wrap { width: 100%; max-width: 760px; margin: auto 0; }
+
+  .masthead { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 36px; }
+  h1 { font-size: 1.7rem; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+  .status-line { display: flex; align-items: center; gap: 7px; font-size: 0.82rem; color: var(--text-muted); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0; }
+  .dot.ok { background: var(--accent); }
+  .dot.down { background: var(--danger-text); }
+
+  .console {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 6px; display: flex; align-items: flex-end; gap: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  textarea {
+    flex: 1; border: none; background: transparent; color: var(--text);
+    font: inherit; font-size: 1.15rem; padding: 18px 10px 18px 20px;
+    resize: none; min-height: 64px; max-height: 220px; line-height: 1.45;
+  }
+  textarea:focus { outline: none; }
+
+  .send-btn {
+    width: 52px; height: 52px; border-radius: 12px; border: none;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; flex-shrink: 0; margin: 6px;
+    background: var(--accent); color: var(--accent-text);
+  }
+  .send-btn:disabled { opacity: 0.45; cursor: default; }
+  .send-btn svg { width: 22px; height: 22px; }
+  .send-btn .spin { animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .send-btn .spin { animation: none; } }
+
+  .hint { font-size: 0.85rem; color: var(--text-muted); margin: 12px 4px 0; text-align: center; }
+
+  .panel {
+    margin-top: 26px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px 28px 24px; display: none;
+  }
+  .panel.show { display: block; }
+  .panel.error { background: var(--danger-bg); border-color: var(--danger-bg); }
+
+  .panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 0.82rem; font-weight: 500; padding: 6px 13px; border-radius: 8px;
+    letter-spacing: 0.01em;
+  }
+  .badge.local { background: var(--local-bg); color: var(--local-text); }
+  .badge.api { background: var(--api-bg); color: var(--api-text); }
+  .badge.calculator { background: var(--calc-bg); color: var(--calc-text); }
+  .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+
+  .dl-group { display: flex; gap: 8px; }
+  .dl-btn {
+    background: var(--accent); border: none; color: var(--accent-text);
+    border-radius: 9px; height: 38px; padding: 0 14px; display: flex; align-items: center;
+    gap: 6px; cursor: pointer; flex-shrink: 0; font-size: 0.78rem; font-weight: 500;
+    font-family: inherit;
+  }
+  .dl-btn:hover { filter: brightness(1.08); }
+  .dl-btn:disabled { opacity: 0.5; cursor: default; }
+  .dl-btn svg { width: 15px; height: 15px; }
+
+  .answer-text { white-space: pre-wrap; line-height: 1.6; font-size: 1.08rem; }
+  .meta { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 0.84rem; color: var(--text-muted); }
+
+  .error-text { font-size: 1rem; color: var(--danger-text); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <h1>Arbiter</h1>
+    <div class="status-line mono">
+      <span class="dot" id="statusDot"></span>
+      <span id="statusLabel">checking&#8230;</span>
+    </div>
+  </div>
+
+  <div class="console">
+    <textarea id="promptInput" placeholder="Ask something&#8230;" rows="1"></textarea>
+    <button class="send-btn" id="askBtn" onclick="askQuestion()" aria-label="Send">
+      <svg id="sendIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+  <p class="hint">Ctrl/Cmd + Enter to send &middot; routes to the local model, your API model, or a direct calculator</p>
+
+  <div class="panel error" id="errorPanel">
+    <div class="error-text" id="errorText"></div>
+  </div>
+
+  <div class="panel" id="answerPanel">
+    <div class="panel-head">
+      <span class="badge" id="sourceBadge"><span class="badge-dot"></span><span id="sourceLabel"></span></span>
+      <div class="dl-group">
+        <button class="dl-btn" id="downloadMdBtn" onclick="downloadMd()" title="Download as Markdown (instant, no server needed)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
+          .md
+        </button>
+        <button class="dl-btn" id="downloadDocxBtn" onclick="downloadDocx()" title="Download as a Word document">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
+          .docx
+        </button>
+      </div>
+    </div>
+    <div class="answer-text" id="answerText"></div>
+    <div class="meta" id="metaText"></div>
+  </div>
+
+</div>
+
+<script>
+  const SERVER_URL = "http://localhost:8000";
+  let lastResult = null;
+
+  function autoGrow(el) {
+    el.style.height = "auto";
+    el.style.height = Math.min(el.scrollHeight, 220) + "px";
+  }
+  const input = document.getElementById("promptInput");
+  input.addEventListener("input", () => autoGrow(input));
+
+  async function checkHealth() {
+    const dot = document.getElementById("statusDot");
+    const label = document.getElementById("statusLabel");
+    try {
+      const resp = await fetch(SERVER_URL + "/health");
+      if (resp.ok) {
+        dot.className = "dot ok";
+        label.textContent = "connected";
+      } else {
+        throw new Error();
+      }
+    } catch {
+      dot.className = "dot down";
+      label.textContent = "server offline";
+    }
+  }
+  checkHealth();
+
+  // Restore the last answer on page load, so a refresh doesn't lose it.
+  try {
+    const saved = localStorage.getItem("arbiter_last_result");
+    if (saved) {
+      lastResult = JSON.parse(saved);
+      renderResult(lastResult);
+    }
+  } catch {
+    // ignore corrupt/missing storage
+  }
+
+  function setBtnLoading(loading) {
+    const icon = document.getElementById("sendIcon");
+    const btn = document.getElementById("askBtn");
+    btn.disabled = loading;
+    if (loading) {
+      icon.innerHTML = '<circle class="spin" cx="12" cy="12" r="8" stroke-dasharray="38" stroke-dashoffset="14" style="transform-origin:center"></circle>';
+    } else {
+      icon.innerHTML = '<path d="M5 12h14M13 6l6 6-6 6"/>';
+    }
+  }
+
+  function renderResult(data) {
+    const badge = document.getElementById("sourceBadge");
+    badge.className = "badge " + data.source;
+    document.getElementById("sourceLabel").textContent =
+      data.source === "api" ? "API model" :
+      data.source === "calculator" ? "Calculator" : "Local model";
+
+    document.getElementById("answerText").textContent = data.answer;
+
+    const metaMsg =
+      data.source === "local" ? "3 local samples agreed \u2014 no API call, $0 cost." :
+      data.source === "api" ? "Local samples disagreed \u2014 escalated to the API model." :
+      "Answered directly, no model call needed.";
+    document.getElementById("metaText").textContent = metaMsg;
+
+    document.getElementById("answerPanel").classList.add("show");
+  }
+
+  function showError(msg) {
+    document.getElementById("answerPanel").classList.remove("show");
+    document.getElementById("errorText").textContent = msg;
+    document.getElementById("errorPanel").classList.add("show");
+  }
+
+  async function askQuestion() {
+    const prompt = input.value.trim();
+    document.getElementById("errorPanel").classList.remove("show");
+    if (!prompt) {
+      showError("Type a question first.");
+      return;
+    }
+
+    setBtnLoading(true);
+    document.getElementById("answerPanel").classList.remove("show");
+
+    try {
+      const resp = await fetch(SERVER_URL + "/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt })
+      });
+      if (!resp.ok) throw new Error("Server returned status " + resp.status);
+      const data = await resp.json();
+      lastResult = { prompt, ...data };
+      renderResult(lastResult);
+      try {
+        localStorage.setItem("arbiter_last_result", JSON.stringify(lastResult));
+      } catch {
+        // storage full or disabled; not critical, just skip persisting
+      }
+    } catch (err) {
+      showError("Couldn't reach the Arbiter server on port 8000. Is it running? (" + err.message + ")");
+    } finally {
+      setBtnLoading(false);
+    }
+  }
+
+  function downloadMd() {
+    if (!lastResult) return;
+    const content = "# Question\n\n" + lastResult.prompt +
+      "\n\n# Answer (" + lastResult.source + ")\n\n" + lastResult.answer + "\n";
+    const blob = new Blob([content], { type: "text/markdown" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "arbiter-answer.md";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  async function downloadDocx() {
+    if (!lastResult) return;
+    const btn = document.getElementById("downloadDocxBtn");
+    btn.disabled = true;
+    try {
+      const resp = await fetch(SERVER_URL + "/download", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          prompt: lastResult.prompt,
+          answer: lastResult.answer,
+          source: lastResult.source
+        })
+      });
+      if (!resp.ok) throw new Error("Server returned status " + resp.status);
+      const blob = await resp.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "arbiter-answer.docx";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      showError("Couldn't generate the Word document. Is the server running? (" + err.message + ")");
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) askQuestion();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "trained_at": "2026-11-15T16:06:50.928773",
+  "n_training_examples": 381,
+  "cv_accuracy_mean": 0.7994685139421981,
+  "cv_auc_mean": 0.7571367341112971,
+  "always_local_baseline": 0.8110236220472441,
+  "features": [
+    "tfidf_char_2to4gram",
+    "prompt_length",
+    "digit_count",
+    "operator_count",
+    "has_question_mark",
+    "word_count",
+    "self_agreement_0to3"
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "trained_at": "2026-11-14T16:30:33.356974",
+  "n_training_examples": 381,
+  "cv_folds": 5,
+  "cv_accuracy_mean": 0.7996497654392392,
+  "cv_accuracy_std": 0.08195340067978199,
+  "cv_auc_mean": 0.6542209555142684,
+  "cv_auc_std": 0.1263501381240805,
+  "always_local_baseline_accuracy": 0.8110236220472441,
+  "features": [
+    "tfidf_char_2to4gram",
+    "prompt_length",
+    "digit_count",
+    "operator_count",
+    "has_question_mark",
+    "word_count",
+    "category_onehot"
+  ],
+  "fold_details": [
+    {
+      "fold": 0,
+      "accuracy": 0.9078947368421053,
+      "precision": 0.9078947368421053,
+      "recall": 1.0,
+      "auc": 0.7142857142857144,
+      "confusion_matrix": [
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          69
+        ]
+      ],
+      "n_val": 76
+    },
+    {
+      "fold": 1,
+      "accuracy": 0.7307692307692307,
+      "precision": 0.7903225806451613,
+      "recall": 0.8596491228070176,
+      "auc": 0.52046783625731,
+      "confusion_matrix": [
+        [
+          8,
+          13
+        ],
+        [
+          8,
+          49
+        ]
+      ],
+      "n_val": 78
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.7564102564102564,
+      "precision": 0.7916666666666666,
+      "recall": 0.9344262295081968,
+      "auc": 0.5255544840887174,
+      "confusion_matrix": [
+        [
+          2,
+          15
+        ],
+        [
+          4,
+          57
+        ]
+      ],
+      "n_val": 78
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.7142857142857143,
+      "precision": 0.7741935483870968,
+      "recall": 0.8571428571428571,
+      "auc": 0.6522108843537415,
+      "confusion_matrix": [
+        [
+          7,
+          14
+        ],
+        [
+          8,
+          48
+        ]
+      ],
+      "n_val": 77
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.8888888888888888,
+      "precision": 0.9393939393939394,
+      "recall": 0.9393939393939394,
+      "auc": 0.8585858585858586,
+      "confusion_matrix": [
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          62
+        ]
+      ],
+      "n_val": 72
+    }
+  ]
+}

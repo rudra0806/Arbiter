@@ -1,0 +1,1737 @@
+[
+  {
+    "id": 1,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "What is the capital of Australia?",
+    "answers": [
+      "canberra"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 2,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "What is the chemical symbol for gold?",
+    "answers": [
+      "au"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 3,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "Who wrote the play Romeo and Juliet?",
+    "answers": [
+      "shakespeare"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 4,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "How many continents are there on Earth? Answer with a number.",
+    "answers": [
+      "7",
+      "seven"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 5,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "What is the largest planet in our solar system?",
+    "answers": [
+      "jupiter"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 6,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "In which year did World War II end?",
+    "answers": [
+      "1945"
+    ],
+    "check": "contains",
+    "split": "test"
+  },
+  {
+    "id": 7,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "At sea level, at what temperature in Celsius does water boil? Answer with a number.",
+    "answers": [
+      "100"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 8,
+    "category": "facts",
+    "difficulty": "medium",
+    "prompt": "Which gas do plants absorb from the air for photosynthesis?",
+    "answers": [
+      "carbon dioxide",
+      "co2"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 9,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "What is the currency of Japan?",
+    "answers": [
+      "yen"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 10,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "Who developed the theory of general relativity?",
+    "answers": [
+      "einstein"
+    ],
+    "check": "contains",
+    "split": "test"
+  },
+  {
+    "id": 11,
+    "category": "math",
+    "difficulty": "easy",
+    "prompt": "What is 17 + 28? Answer with only the number.",
+    "answers": [
+      "45"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 12,
+    "category": "math",
+    "difficulty": "easy",
+    "prompt": "What is 144 divided by 12? Answer with only the number.",
+    "answers": [
+      "12"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 13,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "What is 23 * 19? Answer with only the number.",
+    "answers": [
+      "437"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 14,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "What is 15% of 240? Answer with only the number.",
+    "answers": [
+      "36"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 15,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "Solve for x: 3x + 7 = 28. Answer with only the number.",
+    "answers": [
+      "7"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 16,
+    "category": "math",
+    "difficulty": "easy",
+    "prompt": "What is 2 to the power of 10? Answer with only the number.",
+    "answers": [
+      "1024"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 17,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "What is the average of 12, 18, 25, 33 and 42? Answer with only the number.",
+    "answers": [
+      "26"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 18,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "A train travels at 60 km/h for 2.5 hours. How many km does it travel? Answer with only the number.",
+    "answers": [
+      "150"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 19,
+    "category": "math",
+    "difficulty": "hard",
+    "prompt": "What is 987 * 36? Answer with only the number.",
+    "answers": [
+      "35532"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 20,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "What is the sum of all integers from 1 to 100? Answer with only the number.",
+    "answers": [
+      "5050"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 21,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "All roses are flowers. Some flowers fade quickly. Can we conclude that all roses fade quickly? Answer only yes or no.",
+    "answers": [
+      "no"
+    ],
+    "check": "exact",
+    "split": "test"
+  },
+  {
+    "id": 22,
+    "category": "reasoning",
+    "difficulty": "easy",
+    "prompt": "Tom is taller than Sam. Sam is taller than Raj. Who is the shortest? Answer with one name.",
+    "answers": [
+      "raj"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 23,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "If today is Wednesday, what day of the week will it be 10 days from now? Answer with one word.",
+    "answers": [
+      "saturday"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 24,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "A farmer has 17 sheep. All but 9 die. How many sheep are left? Answer with only the number.",
+    "answers": [
+      "9"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 25,
+    "category": "reasoning",
+    "difficulty": "hard",
+    "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How many cents does the ball cost? Answer with only the number.",
+    "answers": [
+      "5"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 26,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "Which is heavier: 1 kg of feathers or 1 kg of steel?",
+    "answers": [
+      "same",
+      "equal",
+      "neither",
+      "both"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 27,
+    "category": "reasoning",
+    "difficulty": "easy",
+    "prompt": "What number comes next in the sequence 2, 6, 18, 54? Answer with only the number.",
+    "answers": [
+      "162"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 28,
+    "category": "reasoning",
+    "difficulty": "hard",
+    "prompt": "What is the angle in degrees between the hour and minute hands of a clock at 3:15? Answer with only the number.",
+    "answers": [
+      "7.5"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 29,
+    "category": "reasoning",
+    "difficulty": "hard",
+    "prompt": "5 machines make 5 widgets in 5 minutes. How many minutes would 100 machines need to make 100 widgets? Answer with only the number.",
+    "answers": [
+      "5"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 30,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "3 people paint a house in 6 days, all working at the same rate. How many days would 6 people need? Answer with only the number.",
+    "answers": [
+      "3"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 31,
+    "category": "format",
+    "difficulty": "easy",
+    "prompt": "Reply with only the word yes in lowercase and nothing else.",
+    "answers": [
+      "yes"
+    ],
+    "check": "exact",
+    "split": "dev"
+  },
+  {
+    "id": 32,
+    "category": "format",
+    "difficulty": "medium",
+    "prompt": "Return a JSON object with keys name and age for a person named Asha aged 21. Output only the JSON.",
+    "answers": {
+      "name": "Asha",
+      "age": 21
+    },
+    "check": "json",
+    "split": "dev"
+  },
+  {
+    "id": 33,
+    "category": "format",
+    "difficulty": "medium",
+    "prompt": "List exactly three fruits separated by commas. No other text.",
+    "answers": [
+      3
+    ],
+    "check": "comma_count",
+    "split": "test"
+  },
+  {
+    "id": 34,
+    "category": "format",
+    "difficulty": "medium",
+    "prompt": "Write a sentence about rain that has exactly 5 words. Output only the sentence.",
+    "answers": [
+      5
+    ],
+    "check": "wordcount",
+    "split": "test"
+  },
+  {
+    "id": 35,
+    "category": "format",
+    "difficulty": "easy",
+    "prompt": "Translate 'good morning' to Spanish. Output only the translation.",
+    "answers": [
+      "buenos días",
+      "buenos dias"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 36,
+    "category": "format",
+    "difficulty": "easy",
+    "prompt": "Convert to uppercase and output only the result: hello world",
+    "answers": [
+      "HELLO WORLD"
+    ],
+    "check": "exact",
+    "split": "dev"
+  },
+  {
+    "id": 37,
+    "category": "format",
+    "difficulty": "medium",
+    "prompt": "Reverse the word 'stream'. Output only the reversed word.",
+    "answers": [
+      "maerts"
+    ],
+    "check": "exact",
+    "split": "dev"
+  },
+  {
+    "id": 38,
+    "category": "format",
+    "difficulty": "easy",
+    "prompt": "Give a one-word antonym of 'hot'.",
+    "answers": [
+      "cold"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 39,
+    "category": "format",
+    "difficulty": "easy",
+    "prompt": "How many letters are in the word 'banana'? Answer with only the number.",
+    "answers": [
+      "6"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 40,
+    "category": "format",
+    "difficulty": "hard",
+    "prompt": "How many times does the letter r appear in the word 'strawberry'? Answer with only the number.",
+    "answers": [
+      "3"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 41,
+    "category": "code",
+    "difficulty": "easy",
+    "prompt": "In Python, what function returns the length of a list x? Answer with the call only.",
+    "answers": [
+      "len(x)"
+    ],
+    "check": "contains",
+    "split": "test"
+  },
+  {
+    "id": 42,
+    "category": "code",
+    "difficulty": "easy",
+    "prompt": "What does print(2 ** 3) output in Python? Answer with only the number.",
+    "answers": [
+      "8"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 43,
+    "category": "code",
+    "difficulty": "medium",
+    "prompt": "In Python, what does \"abc\"[::-1] evaluate to? Answer with only the result.",
+    "answers": [
+      "cba"
+    ],
+    "check": "contains",
+    "split": "test"
+  },
+  {
+    "id": 44,
+    "category": "code",
+    "difficulty": "medium",
+    "prompt": "Write a Python function is_even(n) that returns True if n is even, else False. Output only code.",
+    "answers": [
+      {
+        "call": "is_even(4)",
+        "expect": true
+      },
+      {
+        "call": "is_even(7)",
+        "expect": false
+      },
+      {
+        "call": "is_even(0)",
+        "expect": true
+      }
+    ],
+    "check": "code_exec",
+    "split": "dev"
+  },
+  {
+    "id": 45,
+    "category": "code",
+    "difficulty": "easy",
+    "prompt": "In SQL, which keyword removes duplicate rows from a SELECT result? Answer with one word.",
+    "answers": [
+      "distinct"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 46,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Is the sentiment of this review positive or negative? 'I loved this movie, absolutely fantastic!' Answer with one word.",
+    "answers": [
+      "positive"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 47,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Is the sentiment of this review positive or negative? 'The food was cold and the service was terrible.' Answer with one word.",
+    "answers": [
+      "negative"
+    ],
+    "check": "contains",
+    "split": "test"
+  },
+  {
+    "id": 48,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Extract the email address: 'Contact me at riya.sharma@example.com for details.' Output only the email.",
+    "answers": [
+      "riya.sharma@example.com"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 49,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Classify as spam or not spam: 'WIN a FREE iPhone now!!! Click here'. Answer with spam or not spam only.",
+    "answers": [
+      "spam"
+    ],
+    "check": "exact",
+    "split": "dev"
+  },
+  {
+    "id": 50,
+    "category": "extract",
+    "difficulty": "medium",
+    "prompt": "'The company was founded in 1998 in Pune and moved to Mumbai in 2010.' In what year was it founded? Answer with only the year.",
+    "answers": [
+      "1998"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 51,
+    "category": "math",
+    "difficulty": "easy",
+    "prompt": "What is 48 + 77? Answer with only the number.",
+    "answers": [
+      "125"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 52,
+    "category": "math",
+    "difficulty": "easy",
+    "prompt": "What is 9 * 8? Answer with only the number.",
+    "answers": [
+      "72"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 53,
+    "category": "math",
+    "difficulty": "easy",
+    "prompt": "What is 1000 - 387? Answer with only the number.",
+    "answers": [
+      "613"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 54,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "What is 36 * 14? Answer with only the number.",
+    "answers": [
+      "504"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 55,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "What is 25% of 360? Answer with only the number.",
+    "answers": [
+      "90"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 56,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "Solve for x: 4x - 9 = 27. Answer with only the number.",
+    "answers": [
+      "9"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 57,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "A rectangle is 13 cm long and 17 cm wide. What is its area in square cm? Answer with only the number.",
+    "answers": [
+      "221"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 58,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "What is 2 to the power of 12? Answer with only the number.",
+    "answers": [
+      "4096"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 59,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "What is the average of 8, 14, 20, 26 and 32? Answer with only the number.",
+    "answers": [
+      "20"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 60,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "A car travels at 72 km/h for 3.5 hours. How many km does it travel? Answer with only the number.",
+    "answers": [
+      "252"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 61,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "What is 4567 + 8765? Answer with only the number.",
+    "answers": [
+      "13332"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 62,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "What is 123 * 45? Answer with only the number.",
+    "answers": [
+      "5535"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 63,
+    "category": "math",
+    "difficulty": "hard",
+    "prompt": "What is 847 * 63? Answer with only the number.",
+    "answers": [
+      "53361"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 64,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "What is the sum of all integers from 1 to 50? Answer with only the number.",
+    "answers": [
+      "1275"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 65,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "A jacket costs $80 and is discounted by 15%. What is the sale price in dollars? Answer with only the number.",
+    "answers": [
+      "68"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 66,
+    "category": "math",
+    "difficulty": "easy",
+    "prompt": "A rectangle is 14 cm long and 9 cm wide. What is its perimeter in cm? Answer with only the number.",
+    "answers": [
+      "46"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 67,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "3 pens cost $4.50 in total. How many dollars do 8 pens cost? Answer with only the number.",
+    "answers": [
+      "12"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 68,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "If 3x + 2x = 75, what is x? Answer with only the number.",
+    "answers": [
+      "15"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 69,
+    "category": "math",
+    "difficulty": "hard",
+    "prompt": "What is 17 * 23 * 2? Answer with only the number.",
+    "answers": [
+      "782"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 70,
+    "category": "math",
+    "difficulty": "medium",
+    "prompt": "What is the remainder when 100 is divided by 7? Answer with only the number.",
+    "answers": [
+      "2"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 71,
+    "category": "reasoning",
+    "difficulty": "easy",
+    "prompt": "Anna is older than Ben. Ben is older than Chris. Who is the youngest? Answer with one name.",
+    "answers": [
+      "chris"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 72,
+    "category": "reasoning",
+    "difficulty": "easy",
+    "prompt": "All cats are mammals. Tom is a cat. Is Tom a mammal? Answer only yes or no.",
+    "answers": [
+      "yes"
+    ],
+    "check": "exact",
+    "split": "dev"
+  },
+  {
+    "id": 73,
+    "category": "reasoning",
+    "difficulty": "hard",
+    "prompt": "If today is Monday, what day of the week will it be 100 days from now? Answer with one word.",
+    "answers": [
+      "wednesday"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 74,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "A shelf has 20 books. You remove all but 6. How many books remain on the shelf? Answer with only the number.",
+    "answers": [
+      "6"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 75,
+    "category": "reasoning",
+    "difficulty": "easy",
+    "prompt": "What number comes next in the sequence 3, 6, 12, 24? Answer with only the number.",
+    "answers": [
+      "48"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 76,
+    "category": "reasoning",
+    "difficulty": "easy",
+    "prompt": "What number comes next in the sequence 1, 4, 9, 16? Answer with only the number.",
+    "answers": [
+      "25"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 77,
+    "category": "reasoning",
+    "difficulty": "hard",
+    "prompt": "What number comes next in the sequence 2, 3, 5, 8, 12? Answer with only the number.",
+    "answers": [
+      "17"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 78,
+    "category": "reasoning",
+    "difficulty": "hard",
+    "prompt": "A snail climbs 3 m up a 10 m well each day and slips back 2 m each night. On which day does it reach the top? Answer with only the number.",
+    "answers": [
+      "8"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 79,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "If it rains, the ground is wet. The ground is wet. Does it necessarily follow that it rained? Answer only yes or no.",
+    "answers": [
+      "no"
+    ],
+    "check": "exact",
+    "split": "dev"
+  },
+  {
+    "id": 80,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "4 people each shake hands with every other person exactly once. How many handshakes happen in total? Answer with only the number.",
+    "answers": [
+      "6"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 81,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "In a race, you overtake the person in second place. What place are you in now? Answer with one word.",
+    "answers": [
+      "second",
+      "2nd"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 82,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "How many months of the year have at least 28 days? Answer with only the number.",
+    "answers": [
+      "12"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 83,
+    "category": "reasoning",
+    "difficulty": "hard",
+    "prompt": "If 3 cats catch 3 mice in 3 minutes, how many cats are needed to catch 100 mice in 100 minutes? Answer with only the number.",
+    "answers": [
+      "3"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 84,
+    "category": "reasoning",
+    "difficulty": "easy",
+    "prompt": "What day comes next in this pattern: Monday, Wednesday, Friday, ...? Answer with one word.",
+    "answers": [
+      "sunday"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 85,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "A is taller than B. C is shorter than B. D is taller than A. Who is the tallest? Answer with one letter.",
+    "answers": [
+      "d"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 86,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "5 apples cost $10. How many dollars do 12 apples cost? Answer with only the number.",
+    "answers": [
+      "24"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 87,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "How many minutes are there between 2:45 PM and 5:10 PM? Answer with only the number.",
+    "answers": [
+      "145"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 88,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "A rope is cut into 4 equal pieces. How many cuts are needed? Answer with only the number.",
+    "answers": [
+      "3"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 89,
+    "category": "reasoning",
+    "difficulty": "hard",
+    "prompt": "How many times do the hour hand and minute hand of a clock overlap in 12 hours? Answer with only the number.",
+    "answers": [
+      "11"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 90,
+    "category": "reasoning",
+    "difficulty": "medium",
+    "prompt": "Which weighs more: a kilogram of iron or two kilograms of feathers? Answer with one word: iron or feathers.",
+    "answers": [
+      "feathers"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 91,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "What is the largest ocean on Earth?",
+    "answers": [
+      "pacific"
+    ],
+    "check": "contains",
+    "split": "test"
+  },
+  {
+    "id": 92,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "Who painted the Mona Lisa?",
+    "answers": [
+      "leonardo",
+      "da vinci"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 93,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "What is the capital of Canada?",
+    "answers": [
+      "ottawa"
+    ],
+    "check": "contains",
+    "split": "test"
+  },
+  {
+    "id": 94,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "What is the chemical symbol for sodium?",
+    "answers": [
+      "na"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 95,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "Which part of the cell is known as its powerhouse?",
+    "answers": [
+      "mitochondri"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 96,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "What is the capital of Japan?",
+    "answers": [
+      "tokyo"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 97,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "What is the longest river in Africa?",
+    "answers": [
+      "nile"
+    ],
+    "check": "contains",
+    "split": "test"
+  },
+  {
+    "id": 98,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "Which planet is closest to the Sun?",
+    "answers": [
+      "mercury"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 99,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "In which year did India gain independence? Answer with the year only.",
+    "answers": [
+      "1947"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 100,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "How many sides does a hexagon have? Answer with only the number.",
+    "answers": [
+      "6"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 101,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "Who wrote the novel 1984?",
+    "answers": [
+      "orwell"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 102,
+    "category": "facts",
+    "difficulty": "medium",
+    "prompt": "Roughly how fast is light in a vacuum, in km per second?",
+    "answers": [
+      "300,000",
+      "300000",
+      "299,792",
+      "299792",
+      "3 x 10",
+      "3×10"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 103,
+    "category": "facts",
+    "difficulty": "medium",
+    "prompt": "What is the capital of Brazil?",
+    "answers": [
+      "brasilia",
+      "brasília"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 104,
+    "category": "facts",
+    "difficulty": "easy",
+    "prompt": "What is the hardest naturally occurring substance?",
+    "answers": [
+      "diamond"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 105,
+    "category": "facts",
+    "difficulty": "medium",
+    "prompt": "What is the smallest prime number? Answer with only the number.",
+    "answers": [
+      "2"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 106,
+    "category": "format",
+    "difficulty": "easy",
+    "prompt": "Reply with only the word hello and nothing else.",
+    "answers": [
+      "hello"
+    ],
+    "check": "exact",
+    "split": "dev"
+  },
+  {
+    "id": 107,
+    "category": "format",
+    "difficulty": "medium",
+    "prompt": "Return a JSON object with keys city and country for Paris, France. Output only the JSON.",
+    "answers": {
+      "city": "Paris",
+      "country": "France"
+    },
+    "check": "json",
+    "split": "test"
+  },
+  {
+    "id": 108,
+    "category": "format",
+    "difficulty": "medium",
+    "prompt": "Return a JSON object with keys item and price for a pen that costs 5. Output only the JSON.",
+    "answers": {
+      "item": "pen",
+      "price": 5
+    },
+    "check": "json",
+    "split": "dev"
+  },
+  {
+    "id": 109,
+    "category": "format",
+    "difficulty": "medium",
+    "prompt": "List exactly four colors separated by commas. No other text.",
+    "answers": [
+      4
+    ],
+    "check": "comma_count",
+    "split": "dev"
+  },
+  {
+    "id": 110,
+    "category": "format",
+    "difficulty": "medium",
+    "prompt": "Write a sentence about the sun that has exactly 7 words. Output only the sentence.",
+    "answers": [
+      7
+    ],
+    "check": "wordcount",
+    "split": "dev"
+  },
+  {
+    "id": 111,
+    "category": "format",
+    "difficulty": "easy",
+    "prompt": "Translate 'thank you' to French. Output only the translation.",
+    "answers": [
+      "merci"
+    ],
+    "check": "contains",
+    "split": "test"
+  },
+  {
+    "id": 112,
+    "category": "format",
+    "difficulty": "easy",
+    "prompt": "Translate 'good night' to Spanish. Output only the translation.",
+    "answers": [
+      "buenas noches"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 113,
+    "category": "format",
+    "difficulty": "medium",
+    "prompt": "Reverse the word 'garden'. Output only the reversed word.",
+    "answers": [
+      "nedrag"
+    ],
+    "check": "exact",
+    "split": "dev"
+  },
+  {
+    "id": 114,
+    "category": "format",
+    "difficulty": "medium",
+    "prompt": "Reverse the word 'planet'. Output only the reversed word.",
+    "answers": [
+      "tenalp"
+    ],
+    "check": "exact",
+    "split": "dev"
+  },
+  {
+    "id": 115,
+    "category": "format",
+    "difficulty": "easy",
+    "prompt": "Give a one-word antonym of 'big'.",
+    "answers": [
+      "small",
+      "little",
+      "tiny"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 116,
+    "category": "format",
+    "difficulty": "easy",
+    "prompt": "How many letters are in the word 'elephant'? Answer with only the number.",
+    "answers": [
+      "8"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 117,
+    "category": "format",
+    "difficulty": "hard",
+    "prompt": "How many times does the letter s appear in the word 'mississippi'? Answer with only the number.",
+    "answers": [
+      "4"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 118,
+    "category": "format",
+    "difficulty": "hard",
+    "prompt": "How many vowels (a, e, i, o, u) are in the word 'education'? Answer with only the number.",
+    "answers": [
+      "5"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 119,
+    "category": "format",
+    "difficulty": "medium",
+    "prompt": "What is the third word in this sentence: 'the quick brown fox jumps'? Output only that word.",
+    "answers": [
+      "brown"
+    ],
+    "check": "exact",
+    "split": "test"
+  },
+  {
+    "id": 120,
+    "category": "format",
+    "difficulty": "easy",
+    "prompt": "How many words are in this sentence: 'I love learning new things'? Answer with only the number.",
+    "answers": [
+      "5"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 121,
+    "category": "code",
+    "difficulty": "easy",
+    "prompt": "In Python, what does len(\"hello\") return? Answer with only the number.",
+    "answers": [
+      "5"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 122,
+    "category": "code",
+    "difficulty": "easy",
+    "prompt": "In Python, what does print(10 // 3) output? Answer with only the number.",
+    "answers": [
+      "3"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 123,
+    "category": "code",
+    "difficulty": "easy",
+    "prompt": "In Python, what does print(10 % 3) output? Answer with only the number.",
+    "answers": [
+      "1"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 124,
+    "category": "code",
+    "difficulty": "easy",
+    "prompt": "Which Python keyword is used to define a function? Answer with one word.",
+    "answers": [
+      "def"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 125,
+    "category": "code",
+    "difficulty": "easy",
+    "prompt": "In Python, what does \"abc\".upper() return? Answer with only the result.",
+    "answers": [
+      "abc"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 126,
+    "category": "code",
+    "difficulty": "easy",
+    "prompt": "In SQL, which clause is used to filter rows? Answer with one word.",
+    "answers": [
+      "where"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 127,
+    "category": "code",
+    "difficulty": "medium",
+    "prompt": "In SQL, which clause is used to sort the results? Answer with the clause only.",
+    "answers": [
+      "order by"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 128,
+    "category": "code",
+    "difficulty": "easy",
+    "prompt": "In Python, what is the type of the value [1, 2, 3]? Answer with one word.",
+    "answers": [
+      "list"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 129,
+    "category": "code",
+    "difficulty": "easy",
+    "prompt": "In Python, what does print(2 + 3 * 4) output? Answer with only the number.",
+    "answers": [
+      "14"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 130,
+    "category": "code",
+    "difficulty": "medium",
+    "prompt": "Write a Python function square(n) that returns n squared. Output only code.",
+    "answers": [
+      {
+        "call": "square(3)",
+        "expect": 9
+      },
+      {
+        "call": "square(-4)",
+        "expect": 16
+      },
+      {
+        "call": "square(0)",
+        "expect": 0
+      }
+    ],
+    "check": "code_exec",
+    "split": "dev"
+  },
+  {
+    "id": 131,
+    "category": "code",
+    "difficulty": "medium",
+    "prompt": "Write a Python function max_of_two(a, b) that returns the larger value. Output only code.",
+    "answers": [
+      {
+        "call": "max_of_two(3, 7)",
+        "expect": 7
+      },
+      {
+        "call": "max_of_two(10, 2)",
+        "expect": 10
+      },
+      {
+        "call": "max_of_two(5, 5)",
+        "expect": 5
+      }
+    ],
+    "check": "code_exec",
+    "split": "dev"
+  },
+  {
+    "id": 132,
+    "category": "code",
+    "difficulty": "hard",
+    "prompt": "Write a Python function count_vowels(s) that returns how many vowels (a, e, i, o, u, either case) are in s. Output only code.",
+    "answers": [
+      {
+        "call": "count_vowels('hello')",
+        "expect": 2
+      },
+      {
+        "call": "count_vowels('sky')",
+        "expect": 0
+      },
+      {
+        "call": "count_vowels('AEIOU')",
+        "expect": 5
+      }
+    ],
+    "check": "code_exec",
+    "split": "dev"
+  },
+  {
+    "id": 133,
+    "category": "code",
+    "difficulty": "medium",
+    "prompt": "Write a Python function is_palindrome(s) that returns True if s reads the same backwards, else False. Output only code.",
+    "answers": [
+      {
+        "call": "is_palindrome('level')",
+        "expect": true
+      },
+      {
+        "call": "is_palindrome('hello')",
+        "expect": false
+      },
+      {
+        "call": "is_palindrome('a')",
+        "expect": true
+      }
+    ],
+    "check": "code_exec",
+    "split": "dev"
+  },
+  {
+    "id": 134,
+    "category": "code",
+    "difficulty": "medium",
+    "prompt": "Write a Python function sum_list(nums) that returns the sum of a list of numbers, and 0 for an empty list. Output only code.",
+    "answers": [
+      {
+        "call": "sum_list([1, 2, 3])",
+        "expect": 6
+      },
+      {
+        "call": "sum_list([])",
+        "expect": 0
+      },
+      {
+        "call": "sum_list([-1, 1])",
+        "expect": 0
+      }
+    ],
+    "check": "code_exec",
+    "split": "test"
+  },
+  {
+    "id": 135,
+    "category": "code",
+    "difficulty": "easy",
+    "prompt": "In Python, what does print(bool(0)) output? Answer with one word.",
+    "answers": [
+      "false"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 136,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Is the sentiment positive or negative? 'This is the worst product I have ever bought.' Answer with one word.",
+    "answers": [
+      "negative"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 137,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Is the sentiment positive or negative? 'What a wonderful, relaxing holiday!' Answer with one word.",
+    "answers": [
+      "positive"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 138,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Extract the phone number: 'Call me at 98765-43210 tomorrow.' Output only the number.",
+    "answers": [
+      "98765-43210"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 139,
+    "category": "extract",
+    "difficulty": "medium",
+    "prompt": "Extract the date: 'The meeting is on 15 March 2027 at 10 am.' Output only the date.",
+    "answers": [
+      "15 march 2027"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 140,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "'My name is Karan Mehta and I live in Jaipur.' Which city does the person live in? Answer with one word.",
+    "answers": [
+      "jaipur"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 141,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Classify as spam or not spam: 'Hi Rahul, are we still meeting for lunch at 1?' Answer with spam or not spam only.",
+    "answers": [
+      "not spam"
+    ],
+    "check": "exact",
+    "split": "dev"
+  },
+  {
+    "id": 142,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Classify as spam or not spam: 'Congratulations! You won a lottery. Send your bank details now.' Answer with spam or not spam only.",
+    "answers": [
+      "spam"
+    ],
+    "check": "exact",
+    "split": "test"
+  },
+  {
+    "id": 143,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Extract the price: 'The headphones cost $59 after the discount.' Answer with only the number.",
+    "answers": [
+      "59"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 144,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "'Apollo 11 landed on the Moon in 1969.' In what year did it land? Answer with only the year.",
+    "answers": [
+      "1969"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 145,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Category of this sentence: sports, politics or weather? 'The striker scored two goals in the second half.' Answer with one word.",
+    "answers": [
+      "sports"
+    ],
+    "check": "word",
+    "split": "dev"
+  },
+  {
+    "id": 146,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Category of this sentence: sports, politics or weather? 'Heavy rain is expected across the region tomorrow.' Answer with one word.",
+    "answers": [
+      "weather"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 147,
+    "category": "extract",
+    "difficulty": "medium",
+    "prompt": "How many people are named in this sentence? 'Asha, Ben and Chitra went to the market.' Answer with only the number.",
+    "answers": [
+      "3"
+    ],
+    "check": "word",
+    "split": "test"
+  },
+  {
+    "id": 148,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Extract the email address: 'Send the report to ops.team@example.org by Friday.' Output only the email.",
+    "answers": [
+      "ops.team@example.org"
+    ],
+    "check": "contains",
+    "split": "test"
+  },
+  {
+    "id": 149,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Which language is this? 'Bonjour, comment allez-vous?' Answer with one word.",
+    "answers": [
+      "french"
+    ],
+    "check": "contains",
+    "split": "dev"
+  },
+  {
+    "id": 150,
+    "category": "extract",
+    "difficulty": "easy",
+    "prompt": "Is this a question or a statement? 'Where is the station?' Answer with one word.",
+    "answers": [
+      "question"
+    ],
+    "check": "contains",
+    "split": "test"
+  }
+]
