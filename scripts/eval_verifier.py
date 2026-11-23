@@ -7,7 +7,12 @@ baselines, all on the dev split, all offline using saved data.
 """
 import json
 import re
+import sys
 from collections import Counter
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from gateway.answer_matching import extract_candidate_answer, is_grounded, extract_numbers
 
 TASKS_PATH = "benchmark/tasks.json"
 LOCAL_RESULTS_PATH = "results/local_qwen2.5-1.5b_20261114_130038.json"
@@ -17,20 +22,7 @@ SELF_CONSISTENCY_PATHS = {
     "pool": "results/self_consistency.json",
     "test": "results/self_consistency_test.json",
     "final": "results/self_consistency_final.json",
-
 }
-def extract_candidate_answer(text):
-    if not text:
-        return None
-    cleaned = text.replace("**", "").replace("*", "").replace("`", "")
-    cleaned = re.sub(r"\\[\(\)\[\]]", "", cleaned)
-    cleaned = re.sub(r"\{,\}", ",", cleaned)
-    numbers = re.findall(r"-?\d[\d,]*\.?\d*", cleaned)
-    if numbers:
-        return numbers[-1].replace(",", "")
-    words = re.findall(r"[A-Za-z]+", cleaned)
-    short_words = [w.lower() for w in words if len(w) <= 12]
-    return short_words[-1] if short_words else None
 
 def main(split="dev", n_samples=2):
     tasks = {t["id"]: t for t in json.load(open(TASKS_PATH, encoding="utf-8"))
